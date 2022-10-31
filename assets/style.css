@@ -19,6 +19,7 @@ textarea{
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+  margin-bottom: 0px;
 }
 
 .description{
@@ -28,6 +29,11 @@ textarea{
 .time-block{
   text-align: center;
   border-radius: 15px;
+}
+
+.container {
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .row {
@@ -59,8 +65,8 @@ textarea{
 
 .saveBtn {
   border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px !important;
+  border-bottom-right-radius: 15px !important;
   background-color: #06AED5;
   color: white;
 }
@@ -68,4 +74,15 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+.time-container-width {
+  width: 88px;
+  justify-content: center;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
 }
