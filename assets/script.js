@@ -12,6 +12,18 @@ var fivePMSaveBtn = $("#five-pm-save-btn");
 
 $("#currentDay").text(today);
 
+function checkLocalStorage() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        for (time in parsedValue){
+            var id = "#" + time;
+            $(id).html(parsedValue[time]);
+        }
+    }
+}
+
 setInterval(function () {
     currentHour = moment().hour();
     if (currentHour < 9) {
@@ -214,6 +226,7 @@ function fivePMSave() {
     }
 };
 
+checkLocalStorage();
 nineAMSaveBtn.click(nineAMSave);
 tenAMSaveBtn.click(tenAMSave);
 elevenAMSaveBtn.click(elevenAMSave);
