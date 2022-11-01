@@ -109,6 +109,14 @@ setInterval(function () {
     }
 }, 1000);
 
+function alertLocalSave() {
+    var saveAlert = $("#save-alert");
+    saveAlert.css("display", "flex");
+    setTimeout(() => {
+        saveAlert.css("display", "none")
+    }, 2000);
+};
+
 function nineAMSave() {
     var currentDay = moment().format("MMM Do");
     var localStorageValue = localStorage.getItem(currentDay);
@@ -120,6 +128,7 @@ function nineAMSave() {
     } else {
         localStorage.setItem(currentDay, JSON.stringify({"9am": nineAMValue}));
     }
+    alertLocalSave();
 };
 
 function tenAMSave() {
@@ -133,6 +142,7 @@ function tenAMSave() {
     } else {
         localStorage.setItem(currentDay, JSON.stringify({"10am": tenAMValue}));
     }
+    alertLocalSave();
 };
 
 function elevenAMSave() {
@@ -146,6 +156,7 @@ function elevenAMSave() {
     } else {
         localStorage.setItem(currentDay, JSON.stringify({"11am": elevenAMValue}));
     }
+    alertLocalSave();
 };
 
 function twelvePMSave() {
@@ -159,6 +170,7 @@ function twelvePMSave() {
     } else {
         localStorage.setItem(currentDay, JSON.stringify({"12pm": twelvePMValue}));
     }
+    alertLocalSave();
 };
 
 function onePMSave() {
@@ -172,6 +184,7 @@ function onePMSave() {
     } else {
         localStorage.setItem(currentDay, JSON.stringify({"1pm": onePMValue}));
     }
+    alertLocalSave();
 };
 
 function twoPMSave() {
@@ -185,6 +198,7 @@ function twoPMSave() {
     } else {
         localStorage.setItem(currentDay, JSON.stringify({"2pm": twoPMValue}));
     }
+    alertLocalSave();
 };
 
 function threePMSave() {
@@ -198,6 +212,7 @@ function threePMSave() {
     } else {
         localStorage.setItem(currentDay, JSON.stringify({"3pm": threePMValue}));
     }
+    alertLocalSave();
 };
 
 function fourPMSave() {
@@ -211,6 +226,7 @@ function fourPMSave() {
     } else {
         localStorage.setItem(currentDay, JSON.stringify({"4pm": fourPMValue}));
     }
+    alertLocalSave();
 };
 
 function fivePMSave() {
@@ -224,6 +240,7 @@ function fivePMSave() {
     } else {
         localStorage.setItem(currentDay, JSON.stringify({"5pm": fivePMValue}));
     }
+    alertLocalSave();
 };
 
 checkLocalStorage();
