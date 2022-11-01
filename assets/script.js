@@ -1,4 +1,14 @@
+var currentHour;
 var today = moment().format("dddd, MMMM Do");
+var nineAMSaveBtn = $("#nine-am-save-btn");
+var tenAMSaveBtn = $("#ten-am-save-btn");
+var elevenAMSaveBtn = $("#eleven-am-save-btn");
+var twelvePMSaveBtn = $("#twelve-pm-save-btn");
+var onePMSaveBtn = $("#one-pm-save-btn");
+var twoPMSaveBtn = $("#two-pm-save-btn");
+var threePMSaveBtn = $("#three-pm-save-btn");
+var fourPMSaveBtn = $("#four-pm-save-btn");
+var fivePMSaveBtn = $("#five-pm-save-btn");
 
 $("#currentDay").text(today);
 
@@ -15,7 +25,7 @@ setInterval(function () {
         });
     }
     if (currentHour <= 12 && currentHour >= 9) {
-        $("1pm, #2pm, #3pm, #4pm, #5pm").each(function () {
+        $("#1pm, #2pm, #3pm, #4pm, #5pm").each(function () {
             $(this).addClass("future")
         });
         if (currentHour == 9) {
@@ -86,3 +96,130 @@ setInterval(function () {
         }
     }
 }, 1000);
+
+function nineAMSave() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    var nineAMValue = $("#9am").val();
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        parsedValue["9am"] = nineAMValue;
+        localStorage.setItem(currentDay, JSON.stringify(parsedValue));
+    } else {
+        localStorage.setItem(currentDay, JSON.stringify({"9am": nineAMValue}));
+    }
+};
+
+function tenAMSave() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    var tenAMValue = $("#10am").val();
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        parsedValue["10am"] = tenAMValue;
+        localStorage.setItem(currentDay, JSON.stringify(parsedValue));
+    } else {
+        localStorage.setItem(currentDay, JSON.stringify({"10am": tenAMValue}));
+    }
+};
+
+function elevenAMSave() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    var elevenAMValue = $("#11am").val();
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        parsedValue["11am"] = elevenAMValue;
+        localStorage.setItem(currentDay, JSON.stringify(parsedValue));
+    } else {
+        localStorage.setItem(currentDay, JSON.stringify({"11am": elevenAMValue}));
+    }
+};
+
+function twelvePMSave() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    var twelvePMValue = $("#12pm").val();
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        parsedValue["12pm"] = twelvePMValue;
+        localStorage.setItem(currentDay, JSON.stringify(parsedValue));
+    } else {
+        localStorage.setItem(currentDay, JSON.stringify({"12pm": twelvePMValue}));
+    }
+};
+
+function onePMSave() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    var onePMValue = $("#1pm").val();
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        parsedValue["1pm"] = onePMValue;
+        localStorage.setItem(currentDay, JSON.stringify(parsedValue));
+    } else {
+        localStorage.setItem(currentDay, JSON.stringify({"1pm": onePMValue}));
+    }
+};
+
+function twoPMSave() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    var twoPMValue = $("#2pm").val();
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        parsedValue["2pm"] = twoPMValue;
+        localStorage.setItem(currentDay, JSON.stringify(parsedValue));
+    } else {
+        localStorage.setItem(currentDay, JSON.stringify({"2pm": twoPMValue}));
+    }
+};
+
+function threePMSave() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    var threePMValue = $("#3pm").val();
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        parsedValue["3pm"] = threePMValue;
+        localStorage.setItem(currentDay, JSON.stringify(parsedValue));
+    } else {
+        localStorage.setItem(currentDay, JSON.stringify({"3pm": threePMValue}));
+    }
+};
+
+function fourPMSave() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    var fourPMValue = $("#4pm").val();
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        parsedValue["4pm"] = fourPMValue;
+        localStorage.setItem(currentDay, JSON.stringify(parsedValue));
+    } else {
+        localStorage.setItem(currentDay, JSON.stringify({"4pm": fourPMValue}));
+    }
+};
+
+function fivePMSave() {
+    var currentDay = moment().format("MMM Do");
+    var localStorageValue = localStorage.getItem(currentDay);
+    var nineAMValue = $("#5pm").val();
+    if (localStorageValue) {
+        var parsedValue = JSON.parse(localStorageValue);
+        parsedValue["5pm"] = nineAMValue;
+        localStorage.setItem(currentDay, JSON.stringify(parsedValue));
+    } else {
+        localStorage.setItem(currentDay, JSON.stringify({"5pm": fivePMValue}));
+    }
+};
+
+nineAMSaveBtn.click(nineAMSave);
+tenAMSaveBtn.click(tenAMSave);
+elevenAMSaveBtn.click(elevenAMSave);
+twelvePMSaveBtn.click(twelvePMSave);
+onePMSaveBtn.click(onePMSave);
+twoPMSaveBtn.click(twoPMSave);
+threePMSaveBtn.click(threePMSave);
+fourPMSaveBtn.click(fourPMSave);
+fivePMSaveBtn.click(fivePMSave);
