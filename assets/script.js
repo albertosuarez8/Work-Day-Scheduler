@@ -12,6 +12,7 @@ var fivePMSaveBtn = $("#five-pm-save-btn");
 
 $("#currentDay").text(today);
 
+// Populates what is in the local storage to the appropriate text area
 function checkLocalStorage() {
     var currentDay = moment().format("MMM Do");
     var localStorageValue = localStorage.getItem(currentDay);
@@ -24,6 +25,7 @@ function checkLocalStorage() {
     }
 }
 
+// Styles the textarea according to the time of the day
 setInterval(function () {
     currentHour = moment().hour();
     if (currentHour < 9) {
@@ -109,6 +111,7 @@ setInterval(function () {
     }
 }, 1000);
 
+// Shows the alert to the user when they saved a value into the local storage
 function alertLocalSave() {
     var saveAlert = $("#save-alert");
     saveAlert.css("display", "flex");
@@ -117,6 +120,7 @@ function alertLocalSave() {
     }, 2000);
 };
 
+//Stores the value inside of the textarea to the local storage
 function saveBtn(timeValue) {
     var currentDay = moment().format("MMM Do");
     var localStorageValue = localStorage.getItem(currentDay);
@@ -132,6 +136,7 @@ function saveBtn(timeValue) {
 }
 
 checkLocalStorage();
+// Declaring this function allows to add the corresponding parameter to avoid repeated code
 nineAMSaveBtn.click(function() {
     saveBtn("9am");
 });

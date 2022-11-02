@@ -69,6 +69,7 @@ textarea{
   color: white;
 }
 
+/* Added important tags to override Bootstraps button stylings */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px !important;
@@ -87,6 +88,7 @@ textarea{
   justify-content: center;
 }
 
+/* Let's the textarea div to take the full screen when on desktop device */
 @media (min-width: 1200px) {
   .container {
     max-width: 100%;
